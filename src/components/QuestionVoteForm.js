@@ -4,7 +4,7 @@ import { handleAddQuestionAnswer } from '../actions/questions'
 
 class QuestionVoteForm extends Component {
   state = {
-    selectedAnswer: 'optionOne',
+    selectedAnswer: null,
   }
 
   handleSubmit = (e) => {
@@ -57,7 +57,9 @@ class QuestionVoteForm extends Component {
             </div>
           </div>
         </div>
-        <button className="ui button">Submit</button>
+        <button className="ui button" disabled={!this.state.selectedAnswer}>
+          Submit
+        </button>
       </form>
     )
   }
